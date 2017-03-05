@@ -1,5 +1,6 @@
 package com.example.java.hibernate;
 
+import com.example.java.hibernate.entity.Customer;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -36,6 +37,7 @@ class HibernateUtil {
 
                 // Create MetadataSources
                 MetadataSources sources = new MetadataSources(registry);
+                sources.addAnnotatedClass(Customer.class);
 
                 // Create Metadata
                 Metadata metadata = sources.getMetadataBuilder().build();
